@@ -10,3 +10,4 @@ The launch file sort_tracking.launch can be used to launch the process if RealSe
 ```
 roslaunch sort_tracking sort_tracking_astra.launch
 ```
+Note that tracking will start only if the corresponding ros topic **/people_tracker/person_tracker_measurement** is subscribed to.
