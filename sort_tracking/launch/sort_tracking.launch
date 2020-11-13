@@ -1,0 +1,24 @@
+<launch>
+	<arg name="camera" default="camera" /> <!--This is the camra name. Should be same as waht you use to launch the camera node-->
+	<arg name="rgb_ns" default="color" /> <!--Generally this is rgb.-->
+	<arg name="depth_ns" default="aligned_depth_to_color" />
+	<arg name="image_topic" default="image_raw" />
+	<arg name="depth_topic" default="image_raw" />
+	<arg name="camera_info" default="camera_info" />	
+	<arg name="nodename" default="sort_tracking" />
+
+
+	<arg name="model_txt" default="$(find sort_tracking)/models/MobileNetSSD_deploy.prototxt"/>
+	<arg name="model_bin" default="$(find sort_tracking)/models/MobileNetSSD_deploy.caffemodel"/>
+
+	<node pkg="sort_tracking" type="sort_tracking" name="$(arg nodename)" output="screen">
+		<remap from="camera" to="$(arg camera)" />
+		<remap from="rgb_ns" to="$(arg rgb_ns)" />
+		<remap from="depth_ns" to="$(arg depth_ns)" />
+	    <remap from="image_topic" to="$(arg image_topic)" />
+	    <remap from="depth_topic" to="$(arg depth_topic)" />
+	    <remap from="camera_info" to="$(arg camera_info)" />
+	    <param name="model_txt" type="string" value="$(arg model_txt)" />
+	    <param name="model_bin" type="string" value="$(arg model_bin)" />
+	</node>
+</launch>
