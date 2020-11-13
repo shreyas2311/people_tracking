@@ -1,5 +1,5 @@
 # people_tracking
-This ROS package can be used to track humans in the surroundings. Portions of the code for subscribing to images and acquiring depth are derived from the ros people package. The SORT algorithm is used to track humans. On top of 2D measurements, a 3D Kalman Filter is implemented to obtain depth information of humans in the   envionment.
+This ROS package can be used to track humans in the surroundings. Portions of the code for subscribing to images and acquiring depth are derived from the ros people package. The SORT algorithm is used to track humans. On top of 2D measurements, a 3D Kalman Filter is implemented to obtain depth information of humans in the   environment.
 
 The launch file sort_tracking_astra.launch can be used to launch the process if ORBBEC astra camera is used.
 ```
