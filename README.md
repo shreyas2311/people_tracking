@@ -1,9 +1,6 @@
 # people_tracking
 ## Building
-Download the repository into the src folder. Run the below command to build the code.
-```
-catkin_make
-```
+Download the repository into the src folder and build the code using catkin_make.
 
 ## Launching the process
 This ROS package can be used to track humans in the surroundings. Portions of the code for subscribing to image topics derived from the ros people package. The SORT algorithm is used to track humans. On top of 2D measurements, a 3D Kalman Filter is implemented to obtain depth information of humans in the environment.
